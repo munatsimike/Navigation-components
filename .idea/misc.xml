@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/layout/about_fragment.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/layout/activity_main.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/layout/favourite_fragment.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/layout/fragment_base.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/layout/fragment_home.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/layout/home_fragment.xml" value="0.10597826086956522" />
         <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/menu/menu.xml" value="0.14375" />
+        <entry key="..\:/Users/munat/AndroidStudioProjects/NewsReaderApp2/app/src/main/res/menu/overflow_menu.xml" value="0.14375" />
       </map>
     </option>
   </component>

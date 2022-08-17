@@ -19,4 +19,9 @@
         android:name="nl.project.newsreaderapp.FavouriteFragment"
         android:label="favourite_fragment"
         tools:layout="@layout/favourite_fragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="nl.project.newsreaderapp.AboutFragment"
+        android:label="about_fragment"
+        tools:layout="@layout/about_fragment" />
 </navigation>

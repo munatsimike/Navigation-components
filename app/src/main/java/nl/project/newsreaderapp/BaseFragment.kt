@@ -1,11 +1,10 @@
 package nl.project.newsreaderapp
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VB : ViewBinding>(private var layoutInflater: (bindingInflater: LayoutInflater) -> VB) :
@@ -21,7 +20,6 @@ abstract class BaseFragment<VB : ViewBinding>(private var layoutInflater: (bindi
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // init main activity
         mainActivity = activity as MainActivity
         // get navController already init in the main activity
