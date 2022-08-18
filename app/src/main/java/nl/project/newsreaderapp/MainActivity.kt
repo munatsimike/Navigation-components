@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -13,8 +14,13 @@ import nl.project.newsreaderapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
-    lateinit var navController: NavController
-    lateinit var binding: ViewBinding
+    private lateinit var _navController: NavController
+    private lateinit var binding: ActivityMainBinding
+    lateinit var drawerLayout: DrawerLayout
+
+    val navController: NavController
+        get() = _navController
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,28 +28,32 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //init drawer layout
+        drawerLayout = binding.drawerLayout
         // find navController
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-        navController = navHostFragment.navController
+        _navController = navHostFragment.navController
 
-        // link controller to the action bar
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        // link controller to the action bar and drawer layout
+
+        NavigationUI.setupActionBarWithNavController(this, _navController, drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
     }
 
     // handle navigate up action from the activity
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
+        return NavigationUI.navigateUp(navController, drawerLayout)
     }
 
     // handle menu item selected- navigate to appropriate destination
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(navController)
+        return item.onNavDestinationSelected(_navController)
     }
 
     // inflate the overflow menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-       menuInflater.inflate(R.menu.overflow_menu, menu)
+        menuInflater.inflate(R.menu.overflow_menu, menu)
         return true
     }
 }
