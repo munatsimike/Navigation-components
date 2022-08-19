@@ -7,16 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.*
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import nl.project.newsreaderapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var _navController: NavController
     private lateinit var binding: ActivityMainBinding
-    lateinit var drawerLayout: DrawerLayout
 
     val navController: NavController
         get() = _navController
@@ -27,23 +27,20 @@ class MainActivity : AppCompatActivity() {
         // init main activity view binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         //init drawer layout
-        drawerLayout = binding.drawerLayout
-        // find navController
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         _navController = navHostFragment.navController
 
-        // link controller to the action bar and drawer layout
 
-        NavigationUI.setupActionBarWithNavController(this, _navController, drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView, navController)
+        // link controller to the action bar
+        setupActionBarWithNavController(navController)
+        binding.bottomNav.setupWithNavController(navController)
     }
 
     // handle navigate up action from the activity
     override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, drawerLayout)
+        return navController.navigateUp()
     }
 
     // handle menu item selected- navigate to appropriate destination

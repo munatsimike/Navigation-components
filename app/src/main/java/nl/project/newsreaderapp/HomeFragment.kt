@@ -9,7 +9,7 @@ class HomeFragment :BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infla
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.plyBtn.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_favouriteFragment)
+            navController.navigate(HomeFragmentDirections.actionHomeFragmentToFavouriteFragment())
         }
     }
 }

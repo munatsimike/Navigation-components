@@ -21,7 +21,7 @@
         tools:layout="@layout/favourite_fragment" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="nl.project.newsreaderapp.AboutFragment"
+        android:name="nl.project.newsreaderapp.DetailsFragment"
         android:label="about_fragment"
-        tools:layout="@layout/about_fragment" />
+        tools:layout="@layout/details_fragment" />
 </navigation>

@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nl.project.newsreaderapp.databinding.AboutFragmentBinding
+import nl.project.newsreaderapp.databinding.DetailsFragmentBinding
 
-class AboutFragment : BaseFragment<AboutFragmentBinding>(AboutFragmentBinding::inflate) {
+class DetailsFragment : BaseFragment<DetailsFragmentBinding>(DetailsFragmentBinding::inflate) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
